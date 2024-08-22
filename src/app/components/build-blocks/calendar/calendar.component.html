@@ -1,0 +1,53 @@
+<div class="calendar-scheduler">
+  <div class="calendar-container">
+    <div class="calendar-hint">
+      Select Date To Add Event
+    </div>
+    <div>
+      <mat-card class="demo-inline-calendar-card">
+        <mat-calendar [(selected)]="selectedDate" (selectedChange)="getEvents()"></mat-calendar>
+      </mat-card>
+    </div>
+
+    <div class="button-container">
+      <app-button
+        [size]="'extra-small'"
+        [title]="'+ CREATE'"
+        (clickE)="addEvent()"
+      ></app-button>
+    </div>
+
+    <div>
+      <hr>
+      <app-select
+        [label]="'Change Interval'"
+        [formGroup]="formGroup"
+        [formControlNameString]="'interval'"
+        [options]="selectOptions"
+      >
+      </app-select>
+    </div>
+
+    <div>
+      <hr>
+      <div class="quick-view">Quick View Of My Events</div>
+      <div class="quick-view-container">
+
+        @for (event of allEvents; track event.title) {
+          <div class="quick-view-event-container">
+            <div class="title">{{ event.title }} / {{event.time}}</div>
+            <hr>
+            <div class="description">{{event.description}}</div>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+
+  <div class="scheduler-container">
+    <app-scheduler
+      [interval]="parseInt(formGroup.get('interval')?.value)"
+      [selectedDate]="selectedDate"
+    ></app-scheduler>
+  </div>
+</div>

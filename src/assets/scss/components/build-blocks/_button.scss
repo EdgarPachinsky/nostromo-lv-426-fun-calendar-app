@@ -1,0 +1,38 @@
+.alien-button-container{
+  width: max-content;
+  display: inline-block;
+
+  .alien-button{
+    padding: 20px 50px;
+    font-family: KodeMono;
+    font-size: 50px;
+    background-color: transparent;
+    color: $alien-color-green;
+    border: 5px solid $alien-color-green;
+    transition: 0.3s;
+
+    &:hover{
+      cursor: pointer;
+      border: 5px solid $alien-color-white;
+      transition: 0.3s;
+    }
+
+    &.extra-small {
+      padding: 5px 15px;
+      font-size: 20px;
+    }
+    &.small{
+      padding: 10px 25px;
+      font-size: 30px;
+    }
+    &.medium{
+      padding: 15px 35px;
+      font-size: 40px;
+    }
+    &.large{
+      padding: 20px 50px;
+      font-size: 50px;
+    }
+  }
+}
+

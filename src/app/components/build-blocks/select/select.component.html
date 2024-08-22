@@ -1,0 +1,15 @@
+<div class="alien-input-container" [formGroup]="formGroup">
+  <label>{{label}}</label>
+
+  <select class="alien-input" name="" id="" [formControlName]="formControlNameString">
+    @for (option of options; track option.value) {
+      <option [value]="option.value">{{option.label}}</option>
+    }
+  </select>
+
+  @if (
+    formGroup.get(formControlNameString)?.touched &&
+    formGroup.get(formControlNameString)?.hasError('required')) {
+    <p class="error-required">Field is required</p>
+  }
+</div>

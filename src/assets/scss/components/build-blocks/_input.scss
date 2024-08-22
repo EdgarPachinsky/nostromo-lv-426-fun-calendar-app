@@ -1,0 +1,23 @@
+.alien-input-container{
+  display: flex;
+  flex-direction: column;
+
+  label{
+    font-family: KodeMono;
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: $alien-color-white;
+  }
+
+  .alien-input{
+    padding: 5px 10px;
+    border: 5px solid $alien-color-green;
+    color: $alien-color-white;
+    font-family: KodeMono;
+    background-color: transparent;
+
+    &:focus{
+      outline: none !important;
+    }
+  }
+}

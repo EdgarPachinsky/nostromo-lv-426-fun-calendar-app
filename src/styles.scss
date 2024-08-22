@@ -1,0 +1,91 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$alien-calendar-primary: mat.define-palette(mat.$indigo-palette);
+$alien-calendar-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$alien-calendar-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$alien-calendar-theme: mat.define-light-theme((
+  color: (
+    primary: $alien-calendar-primary,
+    accent: $alien-calendar-accent,
+    warn: $alien-calendar-warn,
+  ),
+  typography: mat.define-typography-config(),
+  density: 0
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($alien-calendar-theme);
+
+/* You can add global styles to this file, and also import other style files */
+
+@import "assets/scss/fonts/index";
+@import "assets/scss/globals/index";
+@import "assets/scss/components/parts";
+@import "assets/scss/components/build-blocks/index";
+@import "assets/scss/components/dialogs/index";
+@import "assets/scss/pages/index";
+
+html, body {
+  height: 100%;
+  background-color: #151515;
+}
+
+.greeting-container{
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  color: $alien-color-white;
+  font-family: KodeMono;
+  flex-direction: column;
+  font-size: 20px;
+
+  .first-line{
+    flex-direction: row;
+    justify-content: center;
+  }
+  .second-line{
+    flex-direction: row;
+  }
+  .alien-name{
+    color: $alien-color-green;
+  }
+}
+::-webkit-scrollbar
+{
+  width: 6px;
+  background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb
+{
+  background-color: $alien-color-green-light;
+}
+.error-required{
+  font-family: KodeMono;
+  margin-top: 5px;
+  color: red;
+}
+.mat-mdc-snack-bar-label{
+  color: $alien-color-green !important;
+  font-family: KodeMono!important;
+}
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

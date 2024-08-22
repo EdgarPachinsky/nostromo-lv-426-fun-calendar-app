@@ -1,0 +1,44 @@
+<mat-dialog-content class="mat-typography">
+  <div class="event-actions">
+    <div class="event-add-input-container">
+      <app-input
+        [formGroup]="formGroup"
+        [label]="'Title'"
+        [formControlNameString]="'title'"
+        >
+      </app-input>
+    </div>
+    <div class="event-add-input-container">
+      <app-text-area
+        [formGroup]="formGroup"
+        [label]="'Description'"
+        [formControlNameString]="'description'"
+      >
+      </app-text-area>
+    </div>
+    <div class="event-add-input-container">
+      <app-select
+        [formGroup]="formGroup"
+        [label]="'Time'"
+        [formControlNameString]="'time'"
+        [options]="data && data.timeOptions || []"
+      >
+      </app-select>
+    </div>
+    <div class="event-add-input-container">
+      <hr>
+      <app-button
+        [size]="'extra-small'"
+        [title]="'+ SAVE'"
+        (clickE)="save()"
+      ></app-button>
+
+      <app-button
+        [additionalContainerClasses]="['ml-2']"
+        [size]="'extra-small'"
+        [title]="'Close'"
+        (clickE)="close()"
+      ></app-button>
+    </div>
+  </div>
+</mat-dialog-content>

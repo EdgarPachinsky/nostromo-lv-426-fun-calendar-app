@@ -1,0 +1,70 @@
+.alien-scheduler{
+  margin-left: 50px;
+
+  .today-hint{
+    color: $alien-color-white;
+    font-family: KodeMono;
+  }
+
+  .scheduler-render-container{
+    max-height: 70vh;
+    overflow-y: scroll;
+    margin-top: 20px;
+
+    .time-block-container{
+      display: flex;
+      flex-direction: row;
+      height: 50px;
+      justify-content: space-between;
+
+      .time-block{
+        width: 10%;
+        color: $alien-color-green;
+      }
+      .time-block-small{
+        width: 10%;
+        color: $alien-color-green;
+        font-size: 10px;
+        text-align: right;
+      }
+
+      .events-container{
+        width: 89%;
+        border-bottom: 1px solid $alien-color-green-light;
+
+        .add-event-hint{
+          color: $alien-color-green;
+          font-size: 12px;
+          display: none;
+          padding-left: 10px;
+          padding-top: 2px;
+        }
+
+        .event-hint{
+          background: $alien-color-black;
+          color: $alien-color-green;
+          font-size: 12px;
+          padding: 2px 5px;
+          margin-top: 2px;
+          border: 1px solid;
+          display: flex;
+          align-items: center;
+
+          mat-icon{
+            font-size: 15px;
+            position: relative;
+            top: 4px;
+            left: 4px;
+          }
+        }
+
+        &:hover .add-event-hint{
+          display: flex;
+        }
+        &:hover{
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

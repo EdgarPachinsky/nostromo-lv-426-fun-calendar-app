@@ -1,0 +1,10 @@
+<div class="alien-input-container" [formGroup]="formGroup">
+  <label>{{label}}</label>
+  <input type="text" class="alien-input" [formControlName]="formControlNameString">
+
+  @if (
+    formGroup.get(formControlNameString)?.touched &&
+    formGroup.get(formControlNameString)?.hasError('required')) {
+    <p class="error-required">Field is required</p>
+  }
+</div>

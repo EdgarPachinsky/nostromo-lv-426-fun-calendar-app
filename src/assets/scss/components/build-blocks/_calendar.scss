@@ -1,0 +1,90 @@
+.mat-calendar{
+  background: #151515;
+  font-family: KodeMono !important;
+  color: $alien-color-green !important;
+}
+
+.mdc-button__label{
+  color: $alien-color-green !important;
+}
+.mat-calendar-body-cell-content{
+  color: $alien-color-green !important;
+}
+.mat-calendar-table-header th{
+  color: $alien-color-green !important;
+}
+.mat-calendar-body-label{
+  color: $alien-color-green !important;
+}
+.mat-calendar-body-today{
+  border: 1px solid $alien-color-green !important;
+}
+.mat-calendar-body-selected{
+  background-color: $alien-color-black-light !important;
+}
+.mat-calendar-content{
+  border: 5px solid;
+  padding-top: 15px !important;
+}
+
+.calendar-scheduler{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+
+  .calendar-container{
+    border: 5px dashed  $alien-color-black-light;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    margin-right: 10px;
+    min-width: 25%;
+    max-width: 25%;
+    margin-top: 10px;
+
+    .calendar-hint{
+      color: white;
+      text-align: center;
+      font-family: KodeMono;
+      font-size: 18px;
+    }
+    .button-container{
+      padding: 10px;
+      padding-left: 0;
+    }
+  }
+
+  .scheduler-container{
+    border: 5px dashed  $alien-color-black-light;
+    font-family: KodeMono;
+    width: 1000px;
+    padding: 10px;
+    margin-top: 10px;
+  }
+
+  .quick-view{
+    font-family: KodeMono;
+    font-size: 18px;
+    color: $alien-color-white;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .quick-view-container{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    font-family: KodeMono;
+    height: 200px;
+    overflow: auto;
+    .quick-view-event-container{
+      border: 5px solid $alien-color-green;
+      padding: 10px;
+      color: $alien-color-white;
+      margin-bottom: 10px;
+
+      .description{
+        word-break: break-all;
+      }
+    }
+  }
+}

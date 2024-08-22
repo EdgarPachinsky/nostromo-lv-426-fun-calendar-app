@@ -1,0 +1,46 @@
+<div class="alien-scheduler">
+  <div class="today-hint">
+    {{ formatDate(selectedDate) }}
+  </div>
+  <div class="scheduler-render-container">
+    @for (timeBlock of timeBlocks; track timeBlock.time; let index = $index) {
+
+      <div class="time-block-container">
+        @if (timeBlock.show) {
+          <div class="time-block">
+            {{ timeBlock.time }}
+          </div>
+        } @else {
+          <div class="time-block-small">
+            {{ timeBlock.time }}
+          </div>
+        }
+
+        @if (!allEvents || !allEvents[timeBlock.time]) {
+          <div class="events-container">
+            <div (click)="addEvent(timeBlock.time)">
+              <div class="add-event-hint">+ Create (Start {{ timeBlock.time }})</div>
+            </div>
+          </div>
+        } @else {
+          <div class="events-container" [attr.data-time]="allEvents[timeBlock.time].time">
+            <div cdkDragLockAxis="y" cdkDragBoundary=".scheduler-render-container"
+                 (cdkDragStarted)="initializeStartCoordinates($event,allEvents[timeBlock.time], index)"
+                 (cdkDragEnded)="dragEnded($event, allEvents[timeBlock.time], index)"
+                 cdkDrag>
+              <div class="event-hint">
+                Event -> <span style="margin-left: 8px"
+                [matTooltip]="allEvents[timeBlock.time].description || ''">{{ allEvents[timeBlock.time].title }}</span>
+
+                <mat-icon (click)="deleteEvent(timeBlock.time)" [matTooltip]="'Delete Event'">delete</mat-icon>
+                <mat-icon (click)="editEvent(timeBlock.time, allEvents[timeBlock.time])" [matTooltip]="'Edit Event'">
+                  edit
+                </mat-icon>
+              </div>
+            </div>
+          </div>
+        }
+      </div>
+    }
+  </div>
+</div>

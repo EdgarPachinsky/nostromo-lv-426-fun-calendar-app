@@ -1,0 +1,37 @@
+.fun-text-container{
+  font-family: KodeMono;
+  display: flex;
+  flex-direction: column;
+  border: 5px dashed  $alien-color-black-light;
+  padding: 10px;
+  text-align: center;
+  color: $alien-color-white;
+  margin-left: 10px;
+  margin-top: 10px;
+
+  span{
+    color: $alien-color-green;
+  }
+
+  .fun-text-title{
+    font-size: 50px;
+  }
+
+  .fun-text{
+    padding: 0 50px;
+  }
+
+  .fun-image-container{
+    text-align: center;
+  }
+
+  .created-by{
+    justify-content: center;
+    align-items: center;
+
+    mat-icon{
+      position: relative;
+      top: 5px;
+    }
+  }
+}

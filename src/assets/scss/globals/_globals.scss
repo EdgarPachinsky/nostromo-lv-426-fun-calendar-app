@@ -1,0 +1,59 @@
+$alien-color-green: #00ff1a;
+$alien-color-green-light: #9bcfa1;
+$alien-color-white: #ffffff;
+$alien-color-black:  #151515;
+$alien-color-black-light: #252525;
+
+$spaces: (
+  0: 0,
+  1: 4px,
+  2: 8px,
+  3: 12px,
+  4: 16px,
+  5: 20px,
+  6: 24px,
+  7: 28px,
+  8: 32px,
+  9: 36px,
+  10: 40px,
+  sm: 16px,
+  md: 32px,
+  lg: 56px,
+  section: 60px
+) !default;
+
+@each $key-spaces,$val-spaces in $spaces {
+  .m-#{$key-spaces} {
+    margin: #{$val-spaces} !important;
+  }
+  .mt-#{$key-spaces} {
+    margin-top: #{$val-spaces} !important;
+  }
+  .mr-#{$key-spaces} {
+    margin-right: #{$val-spaces} !important;
+  }
+  .mb-#{$key-spaces} {
+    margin-bottom: #{$val-spaces} !important;
+  }
+  .ml-#{$key-spaces} {
+    margin-left: #{$val-spaces} !important;
+  }
+  .p-#{$key-spaces} {
+    padding: #{$val-spaces} !important;
+  }
+  .pt-#{$key-spaces} {
+    padding-top: #{$val-spaces} !important;
+  }
+  .pr-#{$key-spaces} {
+    padding-right: #{$val-spaces} !important;
+  }
+  .pb-#{$key-spaces} {
+    padding-bottom: #{$val-spaces} !important;
+  }
+  .pl-#{$key-spaces} {
+    padding-left: #{$val-spaces} !important;
+  }
+  .gap-#{$key-spaces} {
+    gap: #{$val-spaces} !important;
+  }
+}
