@@ -20,3 +20,6 @@ The design of this application is heavily inspired by the *Aliens* movie franchi
 - **Nostromo-inspired Design**: A dark, tech-savvy interface that mimics the look and feel of the iconic spaceship's systems.
 - **Event Management**: Create, edit, and delete events with ease, managing your schedule with precision.
 - **Demo Video**: Checkout demo video of app, running on my localhost
+
+## LIVE DEMO LINK
+https://nostromoschedulinginterface.web.app/
